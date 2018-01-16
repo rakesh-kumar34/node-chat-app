@@ -5,8 +5,17 @@
   <title>Index</title>
 </head>
 <body>
-  <h1>What the hell Chutiya !!</h1>
+  <h1>Welcome to InfoChat!!</h1>
+  <ol id="messages">
+
+  </ol>
+  <form id="chat-form">
+    <input name="message" id="message" type="text" placeholder="Type a message">
+    <button>Send</button>
+    <button id="send-location">Send Location</button>
+  </form>
   <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/libs/jquery-3.2.1.min.js"></script>
   <script src="/js/index.js"></script>
 </body>
 </html>
