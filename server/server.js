@@ -18,14 +18,14 @@ app.use(express.static(publicPath));
 io.on('connection', (socket) => {
     console.log('New User Connected !');
 
-    socket.emit('newMessage', generateMessage('Admin', 'Welcome to the Chat'));
+    socket.emit('newMessage', generateMessage('Admin', 'Welcome to InfoChat'));
 
     socket.broadcast.emit('newMessage', generateMessage('Admin', 'New User Joined') );
 
     socket.on('createMessage', (msg, callback) => {
         //console.log(`Message recieved on server is: ${JSON.stringify(msg)}`);
         io.emit('newMessage', generateMessage(msg.from, msg.text));
-        callback('This is an ack from the server');
+        callback();
     });
 
     socket.on('createLocationMessage', (location) => {
